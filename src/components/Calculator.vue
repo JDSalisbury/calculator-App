@@ -1,8 +1,8 @@
 <template>
     <div class="calculator">
-        <div class="display">display</div>
-        <div class="btn">Clear</div>
-        <div class="btn">+/-</div>
+        <div class="display">{{current || '0'}}</div>
+        <div @click="clear" class="btn">Clear</div>
+        <div @click="sign" class="btn">+/-</div>
         <div class="btn">%</div>
         <div class="btn operator">/</div>
         <div class="btn">7</div>
@@ -26,39 +26,55 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      current: ""
+    }; 
+  },
+  methods: {
+    clear() {
+      this.current = "";
+    },
+    sign() {
+        this.current = this.current.charAt(0) === "-" ?
+        this.current.slice(1) : `-${this.current}`;
+    }
+  }
+};
 </script>
 
 <style scoped>
-
 .calculator {
+  width: 400px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(50px, auto);
 }
-.display{
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    grid-column: 1/-1;
-    background-color: rgb(182, 196, 211);
-    border: 1px solid black;
+.display {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  grid-column: 1/-1;
+  background-color: rgb(182, 196, 211);
+  border: 1px solid black;
 }
 
-.zero{
-    grid-column: 1/3;
+.zero {
+  grid-column: 1/3;
 }
 
-.btn{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    background-color:  #eee;
-    border: 1px solid black;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border: 1px solid black;
 }
 
-.operator{
-    background-color:orange;
-    color: white
+.operator {
+  background-color: orange;
+  color: white;
 }
 </style>
