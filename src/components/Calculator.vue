@@ -37,8 +37,12 @@ export default {};
   grid-auto-rows: minmax(50px, auto);
 }
 .display{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     grid-column: 1/-1;
     background-color: rgb(182, 196, 211);
+    border: 1px solid black;
 }
 
 .zero{
@@ -46,6 +50,9 @@ export default {};
 }
 
 .btn{
+    display:flex;
+    align-items: center;
+    justify-content: center;
     background-color:  #eee;
     border: 1px solid black;
 }
