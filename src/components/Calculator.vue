@@ -1,21 +1,26 @@
 <template>
     <div class="calculator">
         <div class="display">display</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
-        <div>area1</div>
+        <div class="btn">Clear</div>
+        <div class="btn">+/-</div>
+        <div class="btn">%</div>
+        <div class="btn operator">/</div>
+        <div class="btn">7</div>
+        <div class="btn">8</div>
+        <div class="btn">9</div>
+        <div class="btn operator">x</div>
+        <div class="btn">4</div>
+        <div class="btn">5</div>
+        <div class="btn">6</div>
+        <div class="btn operator">-</div>
+        <div class="btn">1</div>
+        <div class="btn">2</div>
+        <div class="btn">3</div>
+        <div class="btn operator">+</div>
+        <div class="zero btn">0</div>
+        <div class="btn">.</div>
+        <div class="btn operator">=</div>
+
 
     </div>
 </template>
@@ -33,5 +38,20 @@ export default {};
 }
 .display{
     grid-column: 1/-1;
+    background-color: rgb(182, 196, 211);
+}
+
+.zero{
+    grid-column: 1/3;
+}
+
+.btn{
+    background-color:  #eee;
+    border: 1px solid black;
+}
+
+.operator{
+    background-color:orange;
+    color: white
 }
 </style>
